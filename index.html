@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DBMS Unit Test I - Bannari Amman Institute of Technology</title>
+<style>
+  :root{
+    --bg1:#0f172a;
+    --accent:#ff6b6b;
+    --card:#ffffff;
+    --muted:#475569;
+    --paperbg: linear-gradient(135deg,#0f172a 0%, #1e3c72 50%, #2a5298 100%);
+  }
+  html,body{height:100%;margin:0;font-family: "Segoe UI", Roboto, Arial, sans-serif;background:var(--paperbg);color:#0b1220;}
+  header{background:linear-gradient(90deg,#0b1220 0%, #0f172a 100%);color:white;padding:28px 20px;text-align:center;border-bottom:6px solid rgba(255,255,255,0.03)}
+  header h1{margin:2px;font-size:20px;letter-spacing:0.6px}
+  header h2{margin:2px;font-size:16px;font-weight:600;color:#cfe8ff}
+  .subtitle{color:#a7c4ff;margin-top:6px;font-size:13px}
+  .container{max-width:1100px;margin:26px auto;padding:18px;}
+  .paper{
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+    padding:22px;border-radius:12px;box-shadow: 0 10px 28px rgba(2,6,23,0.45);
+    color:#07203c;
+  }
+  pre.content{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+    font-size:14px; line-height:1.55; color:#0b1220;
+    margin:0;
+  }
+  .meta{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .footer{margin-top:18px;padding-top:12px;border-top:1px dashed #e6eef9;color:#284660;font-size:13px}
+  .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 6px 14px rgba(255,107,107,0.18)}
+  @media (max-width:700px){
+    header h1{font-size:18px}
+    .container{padding:12px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BANNARI AMMAN INSTITUTE OF TECHNOLOGY</h1>
+  <h2>(An Autonomous Institution Affiliated to Anna University, Chennai)</h2>
+  <div class="subtitle">SATHYAMANGALAM - 638 401</div>
+  <div style="height:10px"></div>
+  <div style="font-size:13px;color:#cbdcff">Unit Test - I - Mar - 2026 • IV Semester</div>
+  <div style="height:8px"></div>
+  <div style="font-size:13px;color:#dbeafe">Course Codes: 22AI405 / 22AM405 / 22CS405 / 22CD405 / 22CT405 / 22IS405 / 22IT405 &amp; DATABASE MANAGEMENT SYSTEM</div>
+</header>
+
+<div class="container">
+  <div class="paper">
+    <div class="meta">Prepared &amp; Published by: <strong>DINESH</strong></div>
+
+<pre class="content">
+BANNARI AMMAN INSTITUTE OF TECHNOLOGY
+
+(An Autonomous Institution Affiliated to Anna University, Chennai)
+
+SATHYAMANGALAM - 638 401
+
+Unit Test - I - Mar - 2026
+
+IV Semester
+
+22AI405/22AM405/22CS405/22CD405/22CT405/22IS405/22IT405 & DATABASE MANAGEMENT
+
+SYSTEM
+
+Q. No.
+
+Questions
+
+1A-q1
+
+(i)
+
+A legacy payroll system follows this sequence: data entry → manual verification → file storage → report generation.
+
+After migrating to a database system, several steps are abstracted by the DBMS.
+
+ Re-map the process flow by identifying which steps are absorbed by the database system and explain how data independence alters the system state transitions.
+
+Answer:
+
+Re-mapped Process using DBMS:
+
+1.     Data Entry → DBMS Input Interface
+
+o   Data is entered and stored directly into the database tables using DBMS forms or applications.
+
+2.     Manual Verification → DBMS Integrity Constraints
+
+o   Verification is handled automatically using constraints, validation rules, and triggers.
+
+3.     File Storage → Database Storage Management
+
+o   DBMS manages data storage, indexing, and data organization internally.
+
+4.     Report Generation → Query Processing
+
+o   Reports are generated using SQL queries and reporting tools.
+
+Effect of Data Independence:
+
+·        Data independence allows changes in database structure without affecting applications.
+
+·        It ensures smooth system state transitions even if schema or storage structure changes.
+
+Keywords: DBMS abstraction, integrity constraints, SQL queries, data independence, storage management.
+
+ 
+
+(3 Marks - [Ap/P, 2])
+
+(ii)
+
+A small firm assumes that a file-based system is sufficient because “only one employee updates data at a time.”
+
+ Identify the hidden assumption in this statement and explain how this assumption breaks when organizational scale or access requirements change.
+
+Answer:
+
+1.     Hidden Assumption:
+
+o   The system assumes single-user access and no concurrent updates.
+
+2.     When Organization Scales:
+
+o   Multiple users may need to access and update data simultaneously, causing data inconsistency and conflicts in file-based systems.
+
+Keywords: Single-user assumption, concurrency problem, data inconsistency, multi-user access.
+
+ 
+
+(2 Marks - [U/C, 2])
+
+1A-q2
+
+(i)
+
+A company evaluates information quality using four parameters: accuracy, timeliness, relevance, and completeness.
+
+In a real-time stock trading system, transaction data arrives with 99% accuracy but a 10second delay.
+
+ Analyze which information-quality characteristic becomes dominant in this scenario and explain how delayed data impacts decision outcomes more severely than minor inaccuracies.
+
+Answer:
+
+Dominant Information Quality Characteristic:
+Timeliness becomes the most important factor in a real-time trading system.
+Reason:
+Stock markets change very rapidly; decisions must be based on current data.
+Impact of Delayed Data:
+A 10-second delay may cause traders to act on outdated prices, leading to wrong trading decisions and financial loss, even if the data is 99% accurate.
+Keywords: Timeliness, real-time system, delayed data, decision accuracy.
+
+ 
+
+(3 Marks - [An/C, 2])
+
+(ii)
+
+Many users believe that “information automatically improves decision quality.”
+
+ Given a scenario where outdated but well-formatted reports are used for planning, explain why this intuition fails and how the timeliness property of information corrects this misconception.
+
+Answer:
+
+Why the Intuition Fails:
+If reports are outdated, the information does not represent the current situation, leading to incorrect planning decisions.
+Role of Timeliness:
+Timeliness ensures that information is up-to-date and available at the right time, which is essential for effective decision making.
+Keywords: Timeliness, outdated information, decision quality, current data.
+
+ 
+
+(2 Marks - [U/C, 1])
+
+1B-q1
+
+(i)
+
+A simplified system environment is described as follows: end users interact with application programs; application programs directly access stored data files; data is physically stored on disk.
+
+ Compared to a standard database system environment, one critical architectural layer is absent.
+
+Identify this missing layer, explain its functional role, and analyze how its absence impacts data abstraction, security enforcement, and long-term maintainability.
+
+Answer:
+
+1. Missing Architectural Layer:
+
+The missing layer is the Database Management System (DBMS) layer.
+2. Functional Role of DBMS:
+
+DBMS acts as an intermediate layer between application programs and the database.
+It provides data management, query processing, security control, and data abstraction.
+3. Impact of Absence:
+
+Data Abstraction:
+Without DBMS, applications directly access files, so no abstraction layers (physical, logical, view levels) exist.
+Changes in file structure require modification of application programs.
+Security Enforcement:
+File-based systems provide limited security.
+No centralized access control or authorization mechanisms.
+Long-term Maintainability:
+Programs become tightly coupled with data files.
+System maintenance becomes complex and time-consuming when data structures change.
+Keywords: DBMS layer, data abstraction, access control, file-based system, maintainability.
+
+ 
+
+(5 Marks - [Ap/C, 2])
+
+ 
+
+1B-q2
+
+(i)
+
+A fintech startup stores customer profiles, transaction records, and audit logs in shared folders using structured CSV files. As the system scales, three alternatives are proposed:
+
+ Option A: Retain file-based storage with strict folder permissions and scheduled backups
+
+Option B: Move all files into a centralized database engine without DBMS services
+
+Option C: Deploy a full DBMS with role-based access, schemas, transaction control, and recovery
+
+The startup must support frequent updates, simultaneous access by developers and analysts, regulatory auditability, and future feature expansion.
+
+Select the most suitable option and justify your decision by mapping each requirement to either a database property or a DBMS function. Also explain why the other two options are structurally insufficient.
+
+Answer:
+
+1. Most Suitable Option:
+
+Option C: Deploy a full DBMS.
+2. Mapping Requirements to DBMS Functions:
+
+Frequent Updates:
+Supported by Transaction Management and Concurrency Control in DBMS.
+Simultaneous Access:
+DBMS provides multi-user access and concurrency mechanisms.
+Regulatory Auditability:
+Achieved through audit logs, role-based access control, and data integrity constraints.
+Future Feature Expansion:
+DBMS supports schema management, scalability, and data independence.
+3. Why Other Options Are Insufficient:
+
+Option A (File-based storage):
+Limited concurrency control, higher risk of data inconsistency, and difficult data management.
+Option B (Centralized storage without DBMS):
+Lacks security control, transaction management, recovery mechanisms, and data integrity enforcement.
+Keywords: DBMS, concurrency control, role-based access, transaction management, scalability, data integrity.
+
+ 
+
+(5 Marks - [Ap/C, 2])
+
+1C-q1
+
+(i)
+
+A traditional relational database organizes data using tables, rows, and fixed schemas. A
+
+NoSQL document database stores data as flexible JSON-like documents.
+
+ Using a real-world analogy (such as filing systems, warehouses, or libraries), translate how data organization, schema flexibility, and query behavior differ between these two models. Your analogy must clearly justify why NoSQL systems are better suited for certain modern applications.
+
+Answer:
+
+Analogy: Library System
+
+1. Relational Database (RDBMS):
+
+Similar to a library catalog system with fixed forms.
+Every book record must follow a strict structure (title, author, publisher, year).
+Data is organized in tables with rows and columns.
+Queries use structured SQL to retrieve related data from multiple tables.
+2. NoSQL Document Database:
+
+Similar to a digital library where each book record can have different details.
+Information is stored as flexible JSON-like documents.
+Each document can have different fields depending on the data type.
+3. Schema Flexibility:
+
+Relational DB: Uses a fixed schema, changes require schema modification.
+NoSQL: Uses a dynamic schema, allowing easy addition of new fields.
+4. Query Behavior:
+
+Relational DB: Queries often require joins between tables.
+NoSQL: Data is stored together, enabling faster retrieval without complex joins.
+5. Why NoSQL is Suitable for Modern Applications:
+
+Supports large-scale data, flexible structure, and fast access, which is useful for web applications, social media platforms, and big data systems.
+Keywords: Relational database, NoSQL, fixed schema, dynamic schema, JSON documents, scalability.
+
+ 
+
+(5 Marks - [Ap/C, 2])
+
+1C-q2
+
+(i)
+
+A ride-sharing platform initially runs on a centralized relational database hosted on a single high-end server. As user demand grows across multiple cities, the company considers three alternatives:
+
+ Option A: Vertically scale the existing centralized database with more CPU and memory
+
+ Option B: Migrate to a distributed database with data partitioned by geographic region
+
+ Option C: Move to a cloud-based managed database with automatic scaling and replication The platform must handle peak-hour surges, tolerate node failures, and support real-time analytics.
+
+ Select the most appropriate option and justify your choice by explicitly analyzing scalability, fault tolerance, and operational complexity trade-offs among the three options.
+
+Answer:
+
+1. Most Appropriate Option:
+
+Option C: Cloud-based managed database with automatic scaling and replication.
+2. Justification Based on Requirements:
+
+Scalability:
+Cloud databases support automatic horizontal scaling, allowing the system to handle peak-hour traffic surges.
+Fault Tolerance:
+Built-in data replication and failover mechanisms ensure the system continues to operate even if a node fails.
+Real-time Analytics:
+Cloud platforms provide high-performance processing and distributed data access, enabling real-time data analysis.
+3. Trade-off Analysis of Other Options:
+
+Option A (Vertical Scaling):
+Limited scalability; upgrading CPU and memory has a hardware limit and creates a single point of failure.
+Option B (Distributed Database):
+Provides scalability and partitioning, but increases operational complexity, requiring manual management of nodes, partitioning, and maintenance.
+Keywords: Horizontal scaling, fault tolerance, replication, distributed database, cloud database, real-time analytics.
+
+ 
+
+(5 Marks - [U/C, 2])
+
+1D-q1
+
+(i)
+
+A transaction in a DBMS follows this high-level sequence:
+
+Transaction start → Read data → Modify data → Commit
+
+ During execution, a system crash occurs immediately after data modification but before commit.
+
+Reconstruct the internal DBMS sequence of actions involving relevant components that ensures database consistency after recovery, and explain how state transitions are managed.
+
+Answer:
+
+1. Write-Ahead Logging (WAL):
+
+Before modifying data, the DBMS log manager records the update in the log file.
+2. Crash Occurs Before Commit:
+
+Since commit record is not written, the transaction is considered incomplete (uncommitted state).
+3. Recovery Process:
+
+During restart, the recovery manager performs UNDO operation using the log records, restoring the database to the previous consistent state.
+State Transition:
+
+Transaction moves from Active → Failed → Aborted, ensuring database consistency.
+Keywords: Write-Ahead Logging, recovery manager, UNDO operation, transaction states, database consistency.
+
+ 
+
+(3 Marks - [U/C, 2])
+
+(ii)
+
+A student claims that “the query processor alone determines DBMS performance.”
+
+ Using the interaction between internal DBMS components, explain why this intuition is incomplete and how other components can dominate performance even when queries are well optimized.
+
+Answer:
+
+Limitation of Query Processor:
+The query processor optimizes SQL queries, but performance also depends on other DBMS components.
+Other Dominant Components:
+Storage manager, buffer manager, and disk I/O operations can affect performance because slow disk access or poor memory management increases query execution time.
+Keywords: Query processor, storage manager, buffer manager, disk I/O, DBMS performance.
+
+ 
+
+(2 Marks - [Ap/C, 2])
+
+ 
+
+1D-q2
+
+(i)
+
+A DBMS handles hundreds of concurrent transactions. Two system parameters are varied independently:
+
+•  Size of the buffer pool
+
+•  Frequency of transaction commits
+
+ Analyze which parameter has a more dominant impact on throughput under high concurrency and justify your reasoning by linking it to internal DBMS component behavior rather than surface-level performance metrics.
+
+Answer:
+
+Dominant Parameter:
+
+Size of the Buffer Pool
+Reasoning:
+
+Buffer Manager Role:
+The buffer pool stores frequently accessed data pages in main memory, reducing disk I/O operations.
+Impact on High Concurrency:
+A larger buffer pool allows multiple transactions to access data from memory, increasing throughput and reducing access latency.
+Commit Frequency Impact:
+Commit operations mainly affect the log manager and transaction manager, but they occur only at transaction completion and have less impact on continuous data access.
+Keywords: Buffer pool, buffer manager, disk I/O, concurrency, transaction throughput.
+
+ 
+
+(3 Marks - [An/C, 2])
+
+(ii)
+
+A system designer assumes that metadata about tables and indexes rarely changes and therefore does not require careful management.
+
+ Identify the hidden assumption in this belief and analyze how improper handling of this internal component can compromise security, correctness, and maintainability.
+
+Answer:
+
+Hidden Assumption:
+
+The designer assumes metadata (data dictionary/system catalog) is static and not critical for system control.
+Impact of Improper Handling:
+
+Security Risk:
+Incorrect metadata may cause improper access permissions or unauthorized data access.
+Correctness and Maintainability:
+Wrong table or index definitions can lead to query errors, data inconsistency, and difficulty in database maintenance.
+Keywords: Metadata, data dictionary, system catalog, access control, data integrity.
+
+ 
+
+(2 Marks - [U/C, 2])
+
+1E-q1
+
+(i)
+
+A database designer models a university system using a single relation:
+
+STUDENT_ALL(StudentID, Name, Department, CourseID, CourseName, FacultyName). During operation, the following problems appear: repeated updates, inconsistent faculty names, and inability to delete a course without losing student information.
+
+ Identify the deep conceptual flaws in this design, explain the underlying relational principles being violated, and outline how restructuring the relations resolves these issues.
+
+Answer:
+
+1. Conceptual Flaws in the Design:
+
+The relation stores student, course, and faculty information in a single table, causing data redundancy.
+Multiple students taking the same course lead to repeated course and faculty data.
+2. Violated Relational Principles:
+
+Normalization Principle (1NF/2NF/3NF):
+Non-key attributes like CourseName and FacultyName depend on CourseID, not directly on StudentID.
+Update Anomaly:
+Changing a faculty name requires updating multiple rows.
+Deletion Anomaly:
+Deleting a course record may remove student information unintentionally.
+Insertion Anomaly:
+Cannot insert course details without a student record.
+3. Restructuring the Relations (Normalization):
+
+STUDENT(StudentID, Name, Department)
+COURSE(CourseID, CourseName, FacultyName)
+ENROLLMENT(StudentID, CourseID)
+4. How This Resolves the Issues:
+
+Eliminates data redundancy.
+Maintains data consistency and integrity.
+Supports independent updates and deletions.
+Keywords: Normalization, functional dependency, update anomaly, deletion anomaly, relational schema.
+
+ 
+
+(5 Marks - [Ap/P, 2])
+
+1E-q2
+
+(i)
+
+A hospital wants to represent patients, doctors, and appointments.
+
+Patients have multiple appointments, doctors attend many patients, and each appointment must involve exactly one patient and one doctor, with a scheduled time.
+
+ Construct a relational model starting from this real-world description. Clearly justify the choice of relations, primary keys, and foreign keys, and explain how the model preserves real-world semantics.
+
+Answer:
+
+1. Relations (Tables):
+
+PATIENT(PatientID, PatientName, Age, Contact)
+DOCTOR(DoctorID, DoctorName, Specialization)
+APPOINTMENT(AppointmentID, PatientID, DoctorID, ScheduledTime)
+2. Primary Keys:
+
+PatientID → Primary Key in PATIENT
+DoctorID → Primary Key in DOCTOR
+AppointmentID → Primary Key in APPOINTMENT
+3. Foreign Keys:
+
+PatientID in APPOINTMENT → references PATIENT(PatientID)
+DoctorID in APPOINTMENT → references DOCTOR(DoctorID)
+4. Preservation of Real-World Semantics:
+
+One patient can have multiple appointments → represented through PatientID in APPOINTMENT.
+One doctor can treat many patients → represented through DoctorID in APPOINTMENT.
+Each appointment connects exactly one patient and one doctor at a scheduled time, maintaining relationship integrity.
+Keywords: Primary key, foreign key, relational model, referential integrity, one-to-many relationship.
+
+ 
+
+(5 Marks - [Ap/C, 2])
+
+1F-q1
+
+(i)
+
+ A development team struggles to understand why object-oriented classes with inheritance and methods do not map cleanly to relational tables.
+
+ Using a real-world analogy (such as organizational hierarchies, blueprints vs. buildings, or contracts vs. records), explain the object–relational impedance mismatch. Then conceptually position ORM as a translation layer and justify which mismatches it resolves and which it fundamentally cannot.
+
+Answer:
+
+1. Real-World Analogy (Blueprint vs Building):
+
+Object-Oriented Model: Similar to a blueprint, where objects contain attributes, methods, and inheritance.
+Relational Model: Similar to a building record, where information is stored in tables with rows and columns.
+2. Object–Relational Impedance Mismatch:
+
+Objects: Store data + behavior (methods) and support inheritance.
+Relational Tables: Store only data, with no behavior or inheritance support.
+This structural difference creates a mapping mismatch.
+3. Role of ORM (Object Relational Mapping):
+
+ORM acts as a translation layer between object-oriented programs and relational databases.
+It converts objects into database tables and rows automatically.
+4. Mismatches ORM Can Resolve:
+
+Mapping class attributes to table columns.
+Handling object persistence and data retrieval.
+Simplifying database operations through object methods.
+5. Mismatches ORM Cannot Fully Resolve:
+
+Differences in inheritance representation.
+Complexity of object relationships vs relational joins.
+Performance issues caused by object-to-table translation.
+Keywords: Object-relational impedance mismatch, ORM, inheritance mapping, relational tables, object persistence.
+
+ 
+
+(5 Marks - [Ap/C, 2])
+
+1F-q2
+
+(i)
+
+A public-sector payroll system is evaluated for compliance before nationwide rollout.
+
+Three deployment options are proposed:
+
+ Option A: A legacy relational database that partially implements relational features
+
+ Option B: A modern relational DBMS that claims compliance with Codd’s principles
+
+ Option C: A hybrid system using relational storage with heavy application-side logic
+
+ The system must ensure data independence, non-bypassable integrity rules, and consistent query behavior across tools.
+
+ Using the intent of Codd’s rules as evaluation criteria, select the most defensible option and justify your choice by identifying which rules become ethically and operationally critical in public data systems, and why partial compliance is insufficient.
+
+Answer:
+
+1. Most Defensible Option:
+
+Option B: A modern relational DBMS compliant with Codd’s rules.
+2. Critical Codd’s Rules for Public Systems:
+
+Data Independence (Logical & Physical):
+Applications remain unaffected when database structure or storage changes.
+Integrity Independence:
+Integrity constraints (such as primary keys and referential rules) must be defined and enforced by the DBMS, not by application programs.
+Non-bypassable Data Access Rule:
+All data access must go through the DBMS query system, ensuring consistent security and validation.
+Uniform Data Access (Relational Model):
+Users and tools access data through standard query language (SQL) ensuring consistent query behavior.
+3. Why Other Options Are Insufficient:
+
+Option A (Legacy System):
+Partial implementation may violate key relational principles, causing data inconsistency and weak integrity enforcement.
+Option C (Application-side Logic):
+Integrity rules can be bypassed if applications fail, reducing data reliability and security.
+4. Importance for Public Data Systems:
+
+Government systems require high reliability, transparency, and data integrity, making full relational compliance essential.
+Keywords: Codd’s rules, data independence, integrity constraints, relational DBMS, SQL consistency.
+
+ 
+
+(5 Marks - [Ap/C, 1])
+
+  
+</pre>
+
+    <div class="footer">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© Bannari Amman Institute of Technology — DBMS Unit Test I</div>
+        <div>
+          <a class="btn" href="#" onclick="downloadFile()">Download HTML</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Simple client-side download of this HTML for convenience:
+  function downloadFile(){
+    const html = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>DBMS Unit Test I - BIT</title></head><body>${document.querySelector('.paper').innerHTML}</body></html>`;
+    const blob = new Blob([html], {type:'text/html'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'DBMS_UnitTest_I_BIT.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>
